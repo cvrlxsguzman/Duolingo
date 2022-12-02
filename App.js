@@ -1,5 +1,7 @@
 import React from "react";
 import { Text, View, ScrollView, Image, TextInput } from "react-native";
+// Components
+import ImageOption from "./src/components/ImageOption";
 // Assets
 import icon from "./assets/icon.png";
 // Styles
@@ -13,41 +15,14 @@ const App = () => {
       <Text style={styles.title}>Which of these is "the glass"?</Text>
 
       <View style={styles.optionsContainer}>
-      <View style={styles.optionContainer}>
-        <Image
-          source={{
-            uri: "https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/cup.png",
-          }}
-          style={styles.optionImage}
+        <ImageOption
+          image="https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/glass.png"
+          text="Glass"
         />
-        <Text style={styles.optionText}>Glass</Text>
-      </View>
-      <View style={styles.optionContainer}>
-        <Image
-          source={{
-            uri: "https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/cup.png",
-          }}
-          style={styles.optionImage}
+        <ImageOption
+          image="https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/cup.png"
+          text="Cup"
         />
-        <Text style={styles.optionText}>Glass</Text>
-      </View>
-      <View style={styles.optionContainer}>
-        <Image
-          source={{
-            uri: "https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/cup.png",
-          }}
-          style={styles.optionImage}
-        />
-        <Text style={styles.optionText}>Glass</Text>
-      </View>
-      <View style={styles.optionContainer}>
-        <Image
-          source={{
-            uri: "https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/cup.png",
-          }}
-          style={styles.optionImage}
-        />
-        <Text style={styles.optionText}>Glass</Text>
       </View>
     </View>
   );
