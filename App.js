@@ -4,6 +4,8 @@ import { Text, View, ScrollView, Image, TextInput } from "react-native";
 import ImageOption from "./src/components/ImageOption";
 // Assets
 import icon from "./assets/icon.png";
+// Data
+import question from "./assets/data/oneQuestionWithOption";
 // Styles
 import styles from "./App.styles";
 
@@ -12,17 +14,16 @@ const App = () => {
 
   return (
     <View style={styles.root}>
-      <Text style={styles.title}>Which of these is "the glass"?</Text>
+      <Text style={styles.title}>{question.question}</Text>
 
       <View style={styles.optionsContainer}>
-        <ImageOption
-          image="https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/glass.png"
-          text="Glass"
-        />
-        <ImageOption
-          image="https://fsmd-assets.s3.eu-west-1.amazonaws.com/duolingo/images/cup.png"
-          text="Cup"
-        />
+        {question.options.map((option) => (
+          <ImageOption
+            key={option.id}
+            image={option.image}
+            text={option.text}
+          />
+        ))}
       </View>
     </View>
   );
