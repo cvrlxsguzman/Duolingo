@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Text, View, ScrollView, Image, TextInput } from "react-native";
 // Components
 import ImageOption from "./src/components/ImageOption";
@@ -10,7 +10,7 @@ import question from "./assets/data/oneQuestionWithOption";
 import styles from "./App.styles";
 
 const App = () => {
-  const status = "error";
+  const [selected, setSelected] = useState(null);
 
   return (
     <View style={styles.root}>
@@ -22,6 +22,8 @@ const App = () => {
             key={option.id}
             image={option.image}
             text={option.text}
+            isSelected={selected?.id === option.id}
+            onPress={() => setSelected(selected === option ? null : option)}
           />
         ))}
       </View>
